@@ -2,8 +2,8 @@
 {
     internal class Program
     {
-        public const int sizeX = 20;
-        public const int sizeY = 20;
+        public const int sizeX = 6;
+        public const int sizeY = 27;
 
         /// <summary>
         /// The for loops in main makes the grid following the sixe parameters et by the two public ints
