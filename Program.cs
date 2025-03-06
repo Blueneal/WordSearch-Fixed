@@ -11,17 +11,36 @@
         /// <param name="args"></param>
         public static void Main(string[] args)
         {
-            for (int i = 0; i < sizeX; i++)
-             {
-                 for (int j = 0; j < sizeY; j++)
-                 {
-                     Console.Write("X ");
-                 }
+            string? userInput;
+            string[]? category;
+            bool isPlaying = false;
 
-                 Console.Write('\n');
-             }
+            Console.WriteLine("Welcome to Word Search!");
+            Console.WriteLine("Want to play? [Y]es or [N]o?");
+            userInput = Console.ReadLine();
+            if (userInput == "Y")
+            {
+                isPlaying = true;
+                Console.WriteLine("Select a Category");
+            }
+
+
+            MakeGrid();
 
             ReadFromFile();
+        }
+
+        public static void MakeGrid()
+        {
+            for (int i = 0; i < sizeX; i++)
+            {
+                for (int j = 0; j < sizeY; j++)
+                {
+                    Console.Write("X ");
+                }
+
+                Console.Write('\n');
+            }
         }
 
     }
