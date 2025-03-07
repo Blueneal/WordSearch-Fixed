@@ -3,31 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WordSearch
 {
     internal class Words
     {
-        /*/public Words() 
+        public Words() 
         {
-            string[] alphabet = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
-            string[] words = { "Cat", "Dog", "Owl", "Ferret", "Dove", "Sparrow", "Whale", };
-            string[] arrayIndex8 = new string[8];
             Random rnd = new Random();
 
-            for (int i = 0; i < arrayIndex8.Length; i++)
+            //string linesFilePath = "Words.txt";
+            
+            Dictionary<string, List<string>> wordCategories = new Dictionary<string, List<string>>();
+
+            wordCategories.Add("Dogs", new List<string> { "Words.txt" });
+
+            List<string> categories = wordCategories.Keys.ToList();
+            string randomCategory = categories[rnd.Next(0, categories.Count)];
+            List<string> words = wordCategories[randomCategory];
+            List<string> selectedWord = new List<string>();
+
+            for (int i = 0; i < 8; i++)
             {
-                int randomIndex = rnd.Next(0, words.Length);
-                string potentialWord = words[randomIndex];
-                if (arrayIndex8.Contains(potentialWord))
+                string randomWord = words[rnd.Next(0, words.Count)];
+                if (!randomWord.Contains(randomWord))
+                {
+                    selectedWord.Add(randomWord);
+                }
+                else
                 {
                     i--;
-                    continue;
                 }
-                arrayIndex8[i] = potentialWord;
             }
-
-        }/*/
+        }
 
         public static void ReadFromFile()
         {
