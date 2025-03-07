@@ -5,13 +5,8 @@
         public const int sizeX = 20;
         public const int sizeY = 20;
 
-        /// <summary>
-        /// The for loops in main makes the grid following the size parameters set by the two public int
-        /// </summary>
-        /// <param name="args"></param>
         public static void Main(string[] args)
         {
-            MakeGrid();
             string? userInput;
             string[]? category;
 
@@ -24,7 +19,7 @@
                 Console.WriteLine("[D]ogs, [P]okemon, [S]tates, [L]anguages");
                 userInput = Console.ReadLine();
 
-                switch (userInput)
+                switch (userInput)//takes user input and separates each case by the categories
                 {
                     case 'D':
                         {
@@ -55,7 +50,7 @@
 
         }
 
-        public static void MakeGrid()
+        public static void MakeGrid()//makes a 20x20 grid that takes the alphabet array and randomizes it
         { 
             string[] alphabet = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
             Random rnd = new Random();
